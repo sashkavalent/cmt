@@ -15,6 +15,11 @@ Ubuntu
 sudo apt-get install sox ffmpeg youtube-dl
 ```
 
+Install missing gems
+```bash
+bundle install
+```
+
 Copy file for keys
 ```bash
 cp secrets.yml.public secrets.yml

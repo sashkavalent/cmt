@@ -1,14 +1,7 @@
-require 'bundler/inline'
-
-gemfile(true) do
-  source 'https://rubygems.org'
-  gem 'pry'
-  gem 'rest-client'
-  gem 'activesupport'
-end
-
-require 'active_support'
-require 'active_support/core_ext'
+require 'rubygems'
+require 'bundler/setup'
+Bundler.require(:default)
+Bundler.require(:development)
 
 require_relative 'lib/utils/log'
 require_relative 'lib/utils/keys'
