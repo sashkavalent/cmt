@@ -10,7 +10,6 @@ class Video
 
   def process
     @video_parts.each(&:process)
-    Log.logger.info("Waiting '#{@path}' for processing")
   end
 
   def processed?

@@ -12,7 +12,7 @@ brew install sox ffmpeg youtube-dl
 
 Ubuntu
 ```bash
-sudo apt-get install sox ffmpeg youtube-dl
+sudo apt-get install sox libsox-fmt-mp3 ffmpeg youtube-dl
 ```
 
 Install missing gems

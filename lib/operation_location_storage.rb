@@ -19,7 +19,7 @@ class OperationLocationStorage
     private
 
     def load_hash
-      YAML.load(File.read(FILE_NAME)) || {}
+      File.exist?(FILE_NAME) ? YAML.load_file(FILE_NAME) || {} : {}
     end
   end
 end

@@ -6,12 +6,16 @@ Bundler.require(:development)
 require_relative 'lib/utils/log'
 require_relative 'lib/utils/keys'
 require_relative 'lib/utils/ffmpeg'
+require_relative 'lib/utils/system'
+require_relative 'lib/utils/color'
 require_relative 'lib/video'
 
 video = Video.new(ARGV[0], ARGV[1..-1]).tap(&:process)
 1_000.times do
   break if video.processed?
-  sleep 4.minutes
+  interval = 4.minutes
+  Log.logger.info("Waiting for emotion recognition processing. Sleep for #{interval.inspect}")
+  sleep interval
 end
 
 p video.periods_and_coolness

@@ -1,10 +1,10 @@
 class Period
   class Position
-    attr_reader :seconds
+    attr_accessor :seconds
 
     def initialize(string_position)
-      minutes, seconds = string_position.split(':').map(&:to_i)
-      @seconds = minutes * 60 + seconds
+      numbers = string_position.split(':').map(&:to_i)
+      @seconds = numbers.reverse.each_with_index.inject(0) { |sum, (number, index)| sum + number * (60**index) }
     end
 
     def humanize
@@ -27,4 +27,8 @@ class Period
   end
 
   alias_method :to_s, :humanize
+
+  def trim_by(seconds)
+    @finish.seconds -= seconds
+  end
 end
