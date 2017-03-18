@@ -2,6 +2,7 @@ With **Coolness Measurement Tool** you can measure coolness of video parts by em
 
 ## Installation
 
+#### Packages
 Install [sox](http://sox.sourceforge.net/), [ffmpeg](https://ffmpeg.org/) and [youtube-dl](https://rg3.github.io/youtube-dl/).
 Generally it's easy.
 
@@ -15,17 +16,27 @@ Ubuntu
 sudo apt-get install sox libsox-fmt-mp3 ffmpeg youtube-dl
 ```
 
-Install missing gems
+#### Missing gems
 ```bash
 bundle install
 ```
 
-Copy file for keys
+#### Copy confg file for keys
 ```bash
 cp secrets.yml.public secrets.yml
 ```
 
 Register here https://www.microsoft.com/cognitive-services/en-us/emotion-api, get Emotion-Preview api key and paste it in `secrets.yml` file.
+
+**You can skip registration** because necessary key is already included in `secrets.yml.public`, but it's recommended to register your own key as the existing one is publicly shared and can quickly reach month quota limit.
+
+### Installation with docker
+You can skip all installation steps and run it with docker.
+```bash
+docker pull openeddoor/cmt
+docker run -it --entrypoint=/bin/bash openeddoor/cmt
+cd cmt
+```
 
 ## Usage
 Providing youtube url
